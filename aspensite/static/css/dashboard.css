@@ -1,0 +1,151 @@
+body {
+    font-family: sans-serif;
+    height: 100%;
+    background-color: #827397;
+}
+
+#header {
+    background-color: #363062;
+    color: white;
+
+    margin: 0px;
+    padding: 1px;
+}
+
+#header-content {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#board-title {
+    padding: 0;
+    margin: 0;
+    align-self: flex-start;
+}
+.header-spacer {
+    /*display: inline-block;*/
+    width: 5%;
+}
+
+.header-item {
+    /*display: inline-block;*/
+    padding: 0px;
+    margin: 0px;
+    line-height: 60px;
+}
+
+/* .right {
+    float: right;
+} */
+
+#plan-week-btn {
+    /*font-weight: 900;*/
+    /*border: 1px solid #000;*/
+    align-self: center;
+}
+
+#account-btn {
+    align-self: flex-end;
+}
+
+.fit {
+    margin: 0;
+    padding: 0;
+}
+
+#lists-body{
+    padding: 10px;
+    white-space: nowrap;
+    /* overflow-x: scroll; */
+    /* overflow-y: hidden; */
+    /* background-color: #827397; */
+    height: 70%;
+}
+
+#lists-body-content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: stretch;
+    height: 70%;
+    /* background-color: black; */
+}
+
+.list {
+    /* border-style: solid; */
+    /* border-color: gray; */
+    /* border-width: 1px; */
+    background-color: #e8defc;
+    border-radius: 20px;
+    margin: 10px;
+
+    width: 300px;
+    max-width: 500px;
+    flex-grow: 1;
+}
+
+.list-content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.list-title {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 1.7em;
+    white-space: initial;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-item {
+    border-radius: 20px;
+    /* border-style: solid; */
+    /* border-color: gray; */
+    /* border-width: 1px; */
+    background-color: white;
+    padding: 10px;
+    margin-top: 10px;
+    white-space: normal;
+    font-size: 20px;
+}
+
+.checkbox {
+    height: 20px;
+    width: 20px;
+    position: relative;
+    right: 1px;
+    bottom: 1px;
+}
+
+.list-buttons-container {
+    padding: 5px;
+    flex-grow: 0;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.list-add-task-btn {
+    height: 30px;
+    width: 30px;
+}
+
+.list-remove-task-btn {
+    height: 30px;
+    width: 30px;
+    transform: rotate(45deg);
+}
+
+.due-date {
+    font-size: 15px;
+}

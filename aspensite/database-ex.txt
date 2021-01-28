@@ -1,0 +1,5 @@
+item: id, content, completed, planned_date, due_date
+- change date it is planned to be done on by changing planned_date
+- due date is due_date
+
+list: doesn't exist

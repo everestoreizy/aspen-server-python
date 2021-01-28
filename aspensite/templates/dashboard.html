@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html class="fit">
+    <head>
+        <title>Dashboard - Aspen Planner</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='dashboard.css')}}">--->
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/dashboard.css')}}">
+    </head>
+    <body class="fit">
+        <div id="header"><div id="header-content">
+            <h1 class="header-item" id='board-title'>Dashboard</h1>
+            <!---<span class='header-item' id='plan-week-btn'>Plan Week</span>--->
+            <span class='header-item' id='update-from-lms-btn' onclick='UpdateFromLMS()'><i>Update calendar</i></span>
+            <span class='header-item right' id='account-btn'>{{g.fname}} {{g.lname}}</span>
+        </div></div>
+        <div id="lists-body">
+            <div id="lists-body-content">
+                {% for ic in g.item_collections %}
+                    <div class="list"><div class="list-content">
+                    <h4 class="list-title">{{ic.date_str}}</h4>
+                    <div class='list-tasks'>
+                        {% for item in ic.items %}
+                            <div class="list-item task">
+                                <div class="item-content-item" id="item-{{item.id}}">
+                                    {{item.content}}
+                                    {% if not item.completed %}
+                                    <br><span class='due-date'>due {{item.due_date_str}}</span>
+                                    {% endif %}
+                                </div>
+                                <img class="item-content-item checkbox" src="{{url_for('static', filename='images/check-filled.png') if item.completed else url_for('static', filename='images/check-unfilled.png')}}" onclick="alert('complete task')">
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class='list-item list-buttons-container'>
+                        <!-- <img class='list-remove-task-btn' src="{{url_for('static', filename='images/plus.png')}}" onclick="alert('remove task')"> --><!---There isnt actually a need for a remove task button anymore!-->
+                        <img class='list-add-task-btn' src="{{url_for('static', filename='images/plus.png')}}" onclick="alert('add task')">
+                    </div>
+                    </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+    <script src="{{ url_for('static', filename='js/common.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</html>
